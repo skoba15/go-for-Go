@@ -41,12 +41,23 @@ func findNextPrime(x int) {
 
 
 
+/* takes user input number and the least greater prime number, output for 23:
+Enter number: 23
+Omg next prime found, time to panic!
+Deferring... 28 is not prime
+Deferring... 27 is not prime
+Deferring... 26 is not prime
+Deferring... 25 is not prime
+Deferring... 24 is not prime
+found prime 29 */
+
+
 func main() {
 	for true {
 	    reader := bufio.NewReader(os.Stdin)
 	    fmt.Print("Enter number: ")
-		Number, _ := reader.ReadString('\n')
-		Number = strings.TrimSuffix(Number, "\r\n")
+	    Number, _ := reader.ReadString('\n')
+	    Number = strings.TrimSuffix(Number, "\r\n")
 	    num, err := strconv.Atoi(Number)
 	    if err != nil {
 	    	fmt.Println("Invalid input")
