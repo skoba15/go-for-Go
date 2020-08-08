@@ -75,7 +75,8 @@ func (f fakeFetcher) Fetch(url string) (string, []string, error) {
 }
 
 // fetcher is a populated fakeFetcher.
-var fetcher = fakeFetcher{
+var (
+fetcher = fakeFetcher{
 	"https://golang.org/": &fakeResult{
 		"The Go Programming Language",
 		[]string{
@@ -108,6 +109,8 @@ var fetcher = fakeFetcher{
 	},
 }
 
-var fetched = make(map[string]int)
+fetched = make(map[string]int)
 
-var mux = &sync.Mutex{}
+mux = &sync.Mutex{}
+
+)
